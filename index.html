@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
+  <body>
+    <div id="main">
+      <div id="nav">
+        <div id="nav-part1">
+          <h3>Menu</h3>
+          <i class="ri-menu-3-line"></i>
+        </div>
+        <div id="nav-part2">
+          <h1>Dentytech</h1>
+        </div>
+        <div id="nav-part3">
+          <button>Log In</button>
+          <button id="btn2">Sign Up</button>
+        </div>
+      </div>
+
+      <img id="img1" src="./img/fire2.jpg" alt="" />
+      <img id="img2" src="./img/fire3.jpg" alt="" />
+      <img id="img3" src="./img/fire4.jpg" alt="" />
+      <img id="img4" src="./img/fire1.jpg" alt="" />
+      <button class="btn" onclick="Change()">
+        <i class="ri-exchange-line"></i>Changes
+      </button>
+      <h5 id="btm-left">Your Simle, Our Passion</h5>
+      <div class="icon">
+        <div class="up">
+          <i class="ri-instagram-line"></i>
+          <i class="ri-youtube-line"></i>
+          <i class="ri-pinterest-line"></i>
+        </div>
+        <div class="down">
+          <p>Best sign of 2025</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var btn = document.getElementsByClassName("btn2");
+    var img = document.getElementById("img4");
+    var img1 = document.getElementById("img3");
+    var img2 = document.getElementById("img2");
+    var img3 = document.getElementById("img1");
+
+    const images = [
+      "./img/fire2.jpg",
+      "./img/fire3.jpg",
+      "./img/fire4.jpg",
+      "./img/fire1.jpg",
+    ];
+    const arr = images.length;
+    let click = 0;
+    function Change() {
+      const randomIndex = () => Math.floor(Math.random() * arr - 1) + 1; // Generate a random inde
+      img1.src = images[randomIndex()];
+      img2.src = images[randomIndex()];
+      img3.src = images[randomIndex()];
+      console.log(arr);
+      if (click >= arr) {
+        click = 0;
+        img.src = "./img/fire1.jpg";
+      }
+      img.src = images[click];
+      click = click + 1;
+    }
+  </script>
+</html>
